@@ -2,3 +2,17 @@
   text-align: center;
   overflow: hidden;
 }
+.pink-text {
+  color: #e54583;
+}
+.pink-btn {
+  background-color: #e54583;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  color: white;
+  padding: 8px 25px;
+}
+.pink-bg {
+  background-color: #e54583;
+}

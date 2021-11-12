@@ -5,9 +5,9 @@ const Footer = () => {
         <div className="footer-container bg-dark text-light p-4 pt-5">
             <div className="row">
 
-                <div className="col-md-5">
+                <div className="col-md-4">
                     <h4>
-                        <span className="text-primary">Education Care</span> Coaching Centre
+                        <span className="pink-text">Lip</span> Care
                     </h4>
                     <h6 className="fw-normal">AR Plaza,Dhaka, Bangladesh..</h6>
                     <h6 className="fw-normal">Mail: abc@gmail.com</h6>
@@ -17,17 +17,21 @@ const Footer = () => {
                     <i className="fab fa-whatsapp-square fs-2 ms-4"></i>
                 </div>
 
-                <div className="col-md-5">
-                    <h3>Subscribe Us Now:</h3>
-                    <div class="input-group w-75">
-                        <input type="text" className="form-control" placeholder="your email address" />
-                        <button className="btn btn-primary" type="button">Subscribe</button>
+                <div className="col-md-4 d-flex justify-content-center">
+                    <div>
+                        <h3>Subscribe Us Now:</h3>
+                        <div className="input-group mt-3">
+                            <input type="email" className="form-control" placeholder="your email address" />
+                            <button className="pink-btn" type="button">Subscribe</button>
+                        </div>
+                        <p className="mt-3">Thanks for subscribing us.</p>
                     </div>
 
-                    <p className="mt-3">Thanks for subscribing us.</p>
+
+
                 </div>
 
-                <div className="col-md-2">
+                <div className="col-md-4">
                     <h3>Platform</h3>
                     <p>Partners</p>
                     <p>News & Blogs</p>
@@ -37,7 +41,7 @@ const Footer = () => {
             <hr />
 
             <footer>
-                <p className="text-white text-center">&copy; Education Care All Rights Reserved</p>
+                <p className="text-white text-center">&copy; Lip Care All Rights Reserved</p>
             </footer>
         </div>
     );
