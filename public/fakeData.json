@@ -1,25 +1,82 @@
 [
     {
         "id":"001",
-        "name":"Charlotte Tilbury Matte Revolution Lipstick","description":"Countless women have found a favorite in Charlotte Tilbury's Matte Revolution Lipstick in Pillow Talk—and if you haven't tried it yet, now is the time to do it.","price":"50","img":"https://i.ibb.co/fkpMkYT/product-1.jpg"},
+        "name":"Charlotte Tilbury Matte Revolution Lipstick","description":"Countless women have found a favorite in Charlotte Tilbury's Matte Revolution Lipstick in Pillow Talk—and if you haven't tried it yet, now is the time to do it.",
+        "price":"50",
+        "img":"https://i.ibb.co/fkpMkYT/product-1.jpg"
+    },
     
-    {"id":"002","name":"Accounting","description":"Simple Accounting Course","price":"60","img":"https://i.ibb.co/4ptXDt9/product-2.jpg"},
+    {
+        "id":"002",
+        "name":" Dior Rouge Dior Refillable Lipstick",
+        "description":"This tube is nothing less than iconic, and it's most famous color has to be the 999 shade that was first formulated back in 1953.It's an absolute perfect true.",
+        "price":"60",
+        "img":"https://i.ibb.co/4ptXDt9/product-2.jpg"
+    },
     
-    {"id":"003","name":"Technology","description":"Learn About Technology","price":"70","img":"https://i.ibb.co/VYHW26g/product-3.jpg"},
+    {
+        "id":"003",
+        "name":"IT Cosmetics Pillow Collagen Lipstick",
+        "description":"Line-smoothing collagen and hydrating hyaluronic acid are two of the not-so-secret ingredients that will keep your lips smiling,and they help this lipstick.",
+        "price":"70",
+        "img":"https://i.ibb.co/VYHW26g/product-3.jpg"
+    },
     
-    {"id":"004","name":"Mathematics","description":"Join Our Mathematics Course To Learn","price":"80","img":""},
+    {
+        "id":"004",
+        "name":"L'Oréal Colour Riche Original Satin Lipstick",
+        "description":"Great for leaving lips feeling moisturized instead of dry or sticky, this classic tube always brings on the compliments.",
+        "price":"80",
+        "img":"https://i.ibb.co/G5RSsp2/product-4.jpg"
+    },
     
-    {"id":"005","name":"Chemistry","description":"Learn Chemistry","price":"90","img":"https://i.ibb.co/FJPKbPT/product-5.jpg"},
+    {
+        "id":"005",
+        "name":"The Coolest Choice: Glossier Ultralip",
+        "description":"This cult-favorite brand finally launched a full-on lipstick, which they've dubbed the cashmere sweatpants of lipstick.",
+        "price":"90",
+        "img":"https://i.ibb.co/FJPKbPT/product-5.jpg"
+    },
     
-    {"id":"006","name":"Physics","description":"Learn Physics","price":"100","img":"https://i.ibb.co/KWyXfKx/product-6.jpg"},
+    {
+        "id":"006",
+        "name":"Rare Beauty Lip Souffle Matte Cream Lipstick",
+        "description":"One of our new favorite affordable beauty brands on the market, Rare Beauty has us swooning over this weightless, air-whipped lip cream",
+        "price":"100",
+        "img":"https://i.ibb.co/KWyXfKx/product-6.jpg"
+    },
     
-    {"id":"007","name":"Biology","description":"Learn Biology","price":"110","img":"https://i.ibb.co/fNpjLCz/product-7.jpg"},
+    {
+        "id":"007",
+        "name":"Best for Sheer Tint Bobbi Brown Crushed Shine Jelly Stick",
+        "description":"This grab-and-go tube is as stinking cute as the sheer, high-shine formula once it's applied to your lipsIt gives a juicy wash of color that is perfect for the more low-maintenance.",
+        "price":"110",
+        "img":"https://i.ibb.co/fNpjLCz/product-7.jpg"
+    },
     
-    {"id":"008","name":"Bangla","description":"Learn Bangla","price":"120","img":"https://i.ibb.co/dGXv81L/product-8.jpg"},
+    {
+        "id":"008",
+        "name":"Maybelline Super Stay Matte Ink Liquid Lipstick",
+        "description":"This drugstore staple is perfect for those trying to dip their toes into the matte or liquid lipstick pool for the first time.flush with rave reviews across",
+        "price":"120",
+        "img":"https://i.ibb.co/dGXv81L/product-8.jpg"
+    },
     
-    {"id":"009","name":"History","description":"learn History","price":"130","img":"https://i.ibb.co/LY176Fs/product-9.jpg"},
+    {
+        "id":"009",
+        "name":"Best Swipe-and-Go Stick: Clinique Almost Lipstick",
+        "description":"The sheer, raisin Black Honey shade of this almost lipstick deserves every ounce of praise it has received over the years—and it recently celebrated its 30th anniversary.",
+        "price":"130",
+        "img":"https://i.ibb.co/LY176Fs/product-9.jpg"
+    },
 
-    {"id":"010","name":"History","description":"learn History","price":"130","img":"https://i.ibb.co/0f9dJbx/product-10.jpg"}
+    {
+        "id":"010",
+        "name":"Lancôme L'Absolu Rouge Drama Ink Liquid Lipstick",
+        "description":"When this new liquid lipstick landed on our doorstep, it immediately commanded a moment of silent appreciation—especially for how long it stayed on our hand after testing out a swipe.",
+        "price":"130",
+        "img":"https://i.ibb.co/0f9dJbx/product-10.jpg"
+    }
 ]
 
 

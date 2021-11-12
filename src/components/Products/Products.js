@@ -1,111 +1,32 @@
 import React from 'react';
-import { Card, Button, Row, Col } from 'react-bootstrap';
+import { Card, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useProduct from '../../hooks/useProduct';
 import pd1 from '../../images/Products/product-1.jpg'
 
 const Products = () => {
+    const [items, setItems] = useProduct();
+    console.log(items);
     return (
-        <div className="py-5 text-center bg-light">
+        <div className="container-fluid px-3 my-5">
             <h1 className="text-uppercase"><span className="pink-text">Lipsticks</span> We Provide</h1>
-            <Row xs={1} md={3} className="g-4 container mx-auto my-5">
-                <Col>
-                    <Card>
-                        <Card.Img variant="top" className="w-50 mx-auto pt-3" src={pd1} />
-                        <Card.Body className="text-center">
-                            <Card.Title>name</Card.Title>
-                            <Card.Text>
-                                description
-                            </Card.Text>
-                        </Card.Body>
-                        <Link to="" className="mx-auto mb-3">
-                            <button className="pink-btn">
-                                Details
-                            </button>
-                        </Link>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card>
-                        <Card.Img variant="top" className="w-50 mx-auto pt-3" src={pd1} />
-                        <Card.Body className="text-center">
-                            <Card.Title>name</Card.Title>
-                            <Card.Text>
-                                description
-                            </Card.Text>
-                        </Card.Body>
-                        <Link to="" className="mx-auto mb-3">
-                            <button className="pink-btn">
-                                Details
-                            </button>
-                        </Link>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card>
-                        <Card.Img variant="top" className="w-50 mx-auto pt-3" src={pd1} />
-                        <Card.Body className="text-center">
-                            <Card.Title>name</Card.Title>
-                            <Card.Text>
-                                description
-                            </Card.Text>
-                        </Card.Body>
-                        <Link to="" className="mx-auto mb-3">
-                            <button className="pink-btn">
-                                Details
-                            </button>
-                        </Link>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card>
-                        <Card.Img variant="top" className="w-50 mx-auto pt-3" src={pd1} />
-                        <Card.Body className="text-center">
-                            <Card.Title>name</Card.Title>
-                            <Card.Text>
-                                description
-                            </Card.Text>
-                        </Card.Body>
-                        <Link to="" className="mx-auto mb-3">
-                            <button className="pink-btn">
-                                Details
-                            </button>
-                        </Link>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card>
-                        <Card.Img variant="top" className="w-50 mx-auto pt-3" src={pd1} />
-                        <Card.Body className="text-center">
-                            <Card.Title>name</Card.Title>
-                            <Card.Text>
-                                description
-                            </Card.Text>
-                        </Card.Body>
-                        <Link to="" className="mx-auto mb-3">
-                            <button className="pink-btn">
-                                Details
-                            </button>
-                        </Link>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card>
-                        <Card.Img variant="top" className="w-50 mx-auto pt-3" src={pd1} />
-                        <Card.Body className="text-center">
-                            <Card.Title>name</Card.Title>
-                            <Card.Text>
-                                description
-                            </Card.Text>
-                        </Card.Body>
-                        <Link to="" className="mx-auto mb-3">
-                            <button className="pink-btn">
-                                Details
-                            </button>
-                        </Link>
-                    </Card>
-                </Col>
+            <div className="row row-cols-1 my-3 row-cols-md-3 g-5">
 
-            </Row>
+                {
+                    items.map(item =>
+                        <div className="col">
+                            <div className="card h-100 d-flex align-items-center p-3">
+                                <img src={item.img} className="card-img-top" width="50px" height="170px" alt="..." />
+                                <div className="card-body text-center">
+                                    <h2 className="card-title">{item.name}</h2>
+                                    <h5 className="card-text"> {item.description}</h5>
+                                    <h3 className="card-text">Price: ${item.price}</h3>
+                                    <button className="pink-btn mt-2">Order Now</button>
+                                </div>
+                            </div>
+                        </div>)
+                }
+            </div>
         </div>
     );
 };
