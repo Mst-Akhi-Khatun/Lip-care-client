@@ -14,14 +14,16 @@ const Products = () => {
 
                 {
                     items.slice(0, 6).map(item =>
-                        <div className="col">
+                        <div className="col" key={item._id}>
                             <div className="card h-100 d-flex align-items-center p-3">
                                 <img src={item?.img} className="card-img-top" width="50px" height="170px" alt="..." />
                                 <div className="card-body text-center">
                                     <h5 className="card-title pink-text">{item?.name}</h5>
                                     <p className="card-text text-secondary" style={{ textAlign: "justify" }}> {item?.description}</p>
                                     <h5 className="card-text pink-text">Price: ${item?.price}</h5>
-                                    <button className="pink-btn mt-2">Order Now</button>
+                                    <Link to={`/order/${item?._id}`}>
+                                        <button className="pink-btn mt-2">Order Now</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>)
