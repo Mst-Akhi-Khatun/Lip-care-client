@@ -1,8 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import logo from '../../../images/logo-2.png'
+import { useForm } from 'react-hook-form';
+import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
+    const { registerUser } = useAuth();
+    const history = useHistory();
+
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => {
+        registerUser(data?.email, data?.password, data?.username, history);
+    };
     return (
         <div className="login-form">
             <div className="container py-1">
@@ -15,13 +24,16 @@ const Register = () => {
                         <p>Login to your account using your preferred social network authentication</p>
                         {/* login form */}
 
-                        <form>
-                            <input required type="text" placeholder="Enter Your Name" className="form-control mb-4 mt-2 mx-auto" />
-                            <input required type="email" placeholder="Enter Your Email" className="form-control mb-4 mt-2 mx-auto" />
-                            <input required type="password" placeholder="Enter Your Password" className="form-control mx-auto mb-4 mt-2" />
-                            <input type="submit" value="Log in" className="mb-3 form-control bg-info text-light" />
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <input type="text" className="form-control" {...register("username", { required: true })} placeholder="Enter Your Name" />
+
+                            <input type="email" className="form-control my-3" {...register("email", { required: true })} placeholder="Enter Your Email" />
+
+                            <input type="password" className="form-control my-3" {...register("password", { required: true })} placeholder="Enter Your Password" />
+
+                            <button type="submit" className="pink-btn w-100 mb-2">Log In</button>
                         </form>
-                        <p>Don’t have an account? <Link to="/register" className="text-info">Create Account</Link></p>
+                        <p>Don’t have an account? <Link to="/register" className="pink-text">Create Account</Link></p>
                     </div>
                 </div>
             </div>

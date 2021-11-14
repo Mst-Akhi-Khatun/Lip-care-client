@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import "./Login.css";
 import logo from '../../../images/logo-2.png'
+import useAuth from '../../../hooks/useAuth';
+import { useForm } from 'react-hook-form';
+
 
 const Login = () => {
-
+    const { loginUser } = useAuth()
+    const history = useHistory();
+    const location = useLocation();
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => {
+        loginUser(data?.email, data?.password, location, history);
+    };
     return (
         <div className="login-form">
             <div className="container py-1">
@@ -17,12 +26,14 @@ const Login = () => {
                         <p>Login to your account using your preferred social network authentication</p>
                         {/* login form */}
 
-                        <form>
-                            <input required type="email" placeholder="Enter Your Email" className="form-control mb-4 mt-2 mx-auto" />
-                            <input required type="password" placeholder="Enter Your Password" className="form-control mx-auto mb-4 mt-2" />
-                            <input type="submit" value="Log in" className="mb-3 form-control bg-info text-light" />
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <input type="email" className="form-control" {...register("email", { required: true })} placeholder="Enter Your Email" />
+
+                            <input type="password" className="form-control my-3" {...register("password", { required: true })} placeholder="Enter Your Password" />
+
+                            <button type="submit" className="pink-btn w-100 mb-2">Log In</button>
                         </form>
-                        <p>Don’t have an account? <Link to="/register" className="text-info">Create Account</Link></p>
+                        <p>Don’t have an account? <Link to="/register" className="pink-text">Create Account</Link></p>
                     </div>
                 </div>
             </div>

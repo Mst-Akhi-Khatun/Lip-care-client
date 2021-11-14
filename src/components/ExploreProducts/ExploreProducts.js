@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useProduct from '../../hooks/useProduct';
 
 
-const Products = () => {
+const ExploreProducts = () => {
     const [items, setItems] = useProduct();
 
     return (
@@ -12,7 +12,7 @@ const Products = () => {
             <div className="row row-cols-1 my-3 row-cols-md-3 g-5">
 
                 {
-                    items.slice(0, 6).map(item =>
+                    items.map(item =>
                         <div className="col">
                             <div className="card h-100 d-flex align-items-center p-3">
                                 <img src={item?.img} className="card-img-top" width="50px" height="170px" alt="..." />
@@ -30,4 +30,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default ExploreProducts;
