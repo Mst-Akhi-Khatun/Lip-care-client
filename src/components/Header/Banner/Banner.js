@@ -1,6 +1,7 @@
 import React from 'react';
 import './Banner.css';
 import banner from '../../../images/Banner/banner.png';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -10,10 +11,12 @@ const Banner = () => {
                     <h2>WELCOME TO</h2>
                     <h1 className="fw-bolder"> Lip  <span className="pink-text"> Care</span> Lipstick Shop</h1>
                     <p className="fs-6 w-75">We deliver high-quality, organic beauty and cosmetic products. All our products are rich in nutrients and it give a delicious aroma.</p>
-                    <button className="pink-btn">Explore</button>
+                    <Link to="/exploreProducts">
+                        <button className="pink-btn">Explore</button>
+                    </Link>
                 </div>
                 <div className="col-md-5">
-                    <div className="pink-bg py-3 px-0 rounded-circle">
+                    <div className="pink-bg py-3 px-0 rounded-circle mt-5">
                         <img src={banner} alt="" className="img-fluid" />
                     </div>
                 </div>

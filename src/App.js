@@ -13,6 +13,7 @@ import Register from './components/Authentication/Register/Register';
 import AuthProvider from './context/AuthProvider';
 import ExploreProducts from './components/ExploreProducts/ExploreProducts';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+import PrivateRoute from './components/Authentication/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -35,9 +36,9 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard />
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>

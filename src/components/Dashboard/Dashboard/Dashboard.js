@@ -17,7 +17,7 @@ const Dashboard = () => {
     let { path, url } = useRouteMatch();
     const { user, logout } = useAuth()
     return (
-        <div>
+        <div style={{ minHeight: "400px" }}>
             <Navbar className="pink-bg" expand={false}>
                 <Container fluid>
                     <Navbar.Brand href="/" className="text-white text-uppercase">
