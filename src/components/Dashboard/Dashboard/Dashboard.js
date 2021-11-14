@@ -3,7 +3,12 @@ import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import { Link, useRouteMatch, Switch, Route } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import banner from '../../../images/banner-1.jpg';
+import NotFound from '../../NotFound/NotFound';
+import AddProduct from '../AddProduct/AddProduct';
 import GiveReview from '../GiveReview/GiveReview';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import ManageOrders from '../ManageOrders/ManageOrders';
+import ManageProducts from '../ManageProducts/ManageProducts';
 import MyOrders from '../MyOrders/MyOrders';
 import Payment from '../Payment/Payment';
 
@@ -33,6 +38,10 @@ const Dashboard = () => {
                                 <Link to={`${url}/myOrder`}>My Orders</Link>
                                 <Link to={`${url}/giveReview`}>Review</Link>
                                 <Link to={`${url}/payment`}>Payment</Link>
+                                <Link to={`${url}/manageOrders`}>Manage All Orders</Link>
+                                <Link to={`${url}/manageProducts`}>Manage Products</Link>
+                                <Link to={`${url}/makeAdmin`}>Make Admin</Link>
+                                <Link to={`${url}/addProduct`}>Add Product</Link>
                                 <button onClick={logout} className="pink-btn mt-3 w-50 mx-auto">Log out</button>
                             </Nav>
                         </Offcanvas.Body>
@@ -44,14 +53,29 @@ const Dashboard = () => {
                     <Route exact path={`${path}`}>
                         <img src={banner} alt="" className="img-fluid" />
                     </Route>
-                    <Route path={`${path}/myOrder`}>
+                    <Route exact path={`${path}`}>
+                        <img src={banner} alt="" className="img-fluid" />
+                    </Route>
+                    <Route exact path={`${path}/myOrder`}>
                         <MyOrders></MyOrders>
                     </Route>
-                    <Route path={`${path}/giveReview`}>
+                    <Route exact path={`${path}/giveReview`}>
                         <GiveReview></GiveReview>
                     </Route>
-                    <Route path={`${path}/payment`}>
+                    <Route exact path={`${path}/payment`}>
                         <Payment></Payment>
+                    </Route>
+                    <Route exact path={`${path}/manageOrders`}>
+                        <ManageOrders></ManageOrders>
+                    </Route>
+                    <Route exact path={`${path}/manageProducts`}>
+                        <ManageProducts></ManageProducts>
+                    </Route>
+                    <Route exact path={`${path}/makeAdmin`}>
+                        <MakeAdmin></MakeAdmin>
+                    </Route>
+                    <Route exact path={`${path}/addProduct`}>
+                        <AddProduct></AddProduct>
                     </Route>
                 </Switch>
             </div>
