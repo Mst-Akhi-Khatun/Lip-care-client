@@ -3,6 +3,9 @@ import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import { Link, useRouteMatch, Switch, Route } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import banner from '../../../images/banner-1.jpg';
+import GiveReview from '../GiveReview/GiveReview';
+import MyOrders from '../MyOrders/MyOrders';
+import Payment from '../Payment/Payment';
 
 
 const Dashboard = () => {
@@ -40,6 +43,15 @@ const Dashboard = () => {
                 <Switch>
                     <Route exact path={`${path}`}>
                         <img src={banner} alt="" className="img-fluid" />
+                    </Route>
+                    <Route path={`${path}/myOrder`}>
+                        <MyOrders></MyOrders>
+                    </Route>
+                    <Route path={`${path}/giveReview`}>
+                        <GiveReview></GiveReview>
+                    </Route>
+                    <Route path={`${path}/payment`}>
+                        <Payment></Payment>
                     </Route>
                 </Switch>
             </div>
