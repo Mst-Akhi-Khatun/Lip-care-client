@@ -8,7 +8,7 @@ const NotFound = () => {
             <img src={error} className="w-100" height="500" alt="" />
 
             <Link to="/home">
-                <button className="btn btn-info text-white mt-4">BACK TO HOME PAGE</button>
+                <button className="pink-btn text-white mt-4">BACK TO HOME PAGE</button>
             </Link>
         </div>
     );

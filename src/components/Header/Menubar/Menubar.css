@@ -2,3 +2,7 @@
   text-decoration: none;
   color: rgb(230, 91, 119);
 }
+
+.menu-item a:hover {
+  color: rgb(184, 32, 62);
+}

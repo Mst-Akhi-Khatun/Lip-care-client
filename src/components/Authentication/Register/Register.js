@@ -20,8 +20,8 @@ const Register = () => {
                 </div>
                 <div className="container w-100">
                     <div className="form-container mx-auto rounded-3 px-5 py-5">
-                        <h3>Welcome Back!</h3>
-                        <p>Login to your account using your preferred social network authentication</p>
+                        <h3>Welcome</h3>
+                        <p>Register for an account using your preferred social network authentication</p>
                         {/* login form */}
 
                         <form onSubmit={handleSubmit(onSubmit)}>
@@ -31,9 +31,9 @@ const Register = () => {
 
                             <input type="password" className="form-control my-3" {...register("password", { required: true })} placeholder="Enter Your Password" />
 
-                            <button type="submit" className="pink-btn w-100 mb-2">Log In</button>
+                            <button type="submit" className="pink-btn w-100 mb-2">Register</button>
                         </form>
-                        <p>Don’t have an account? <Link to="/register" className="pink-text">Create Account</Link></p>
+                        <p>Already have an account? <Link to="/login" className="pink-text">Login</Link></p>
                     </div>
                 </div>
             </div>

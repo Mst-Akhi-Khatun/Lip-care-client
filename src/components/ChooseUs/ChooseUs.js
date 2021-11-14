@@ -3,7 +3,7 @@ import image from '../../images/Chose-Us/chose-1.jpg';
 
 const ChooseUs = () => {
     return (
-        <div className="row container-fluid d-flex align-items-center my-5 pt-5">
+        <div className="row container-fluid d-flex align-items-center mt-5 py-5 light-pink-bg">
             <div className="col-md-6">
                 <img src={image} className="img-fluid w-75" alt="" />
             </div>

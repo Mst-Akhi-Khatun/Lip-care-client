@@ -4,9 +4,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
-import MenuBar from './components/Header/Menubar/Menubar';
 import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer';
 import NotFound from './components/NotFound/NotFound';
@@ -14,13 +12,13 @@ import Login from './components/Authentication/Login/Login';
 import Register from './components/Authentication/Register/Register';
 import AuthProvider from './context/AuthProvider';
 import ExploreProducts from './components/ExploreProducts/ExploreProducts';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
     <div className="App">
       <AuthProvider>
         <Router>
-          <MenuBar></MenuBar>
           <Switch>
             <Route exact path="/">
               <Home></Home>
@@ -36,6 +34,9 @@ function App() {
             </Route>
             <Route path="/register">
               <Register />
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard />
             </Route>
             <Route path="*">
               <NotFound></NotFound>
