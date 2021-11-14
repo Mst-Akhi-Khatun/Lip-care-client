@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap';
 
 const ManageOrders = () => {
     return (
-        <div className="mb-5">
+        <div className="mb-5 px-2">
             <h1 className="pink-text mt-5">Manage All Orders</h1>
             <h3 className="light-pink-text">All customers ordered lipsticks are here</h3>
             <Table className="light-pink-bg my-5" responsive="sm" striped bordered hover>
