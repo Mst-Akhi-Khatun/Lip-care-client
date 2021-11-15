@@ -4,13 +4,34 @@ import useAuth from '../../../hooks/useAuth';
 
 const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([]);
+    const [remove, setRemove] = useState(false);
     const { user } = useAuth()
 
     useEffect(() => {
         fetch(`http://localhost:5000/myOrders/${user?.email}`)
             .then(res => res.json())
             .then(data => setMyOrders(data))
-    }, [])
+    }, [remove])
+
+
+    const handleRemove = (id) => {
+        const proceed = window.confirm("Are you sure to remove order?");
+        if (proceed) {
+            fetch(`http://localhost:5000/removeOrder/${id}`, {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert("Order successfully Removed!")
+                        setRemove(!remove)
+                    };
+                })
+        }
+    }
+
+
     return (
         <div className="container my-5" style={{ minHeight: "200px" }}>
             <h1 className="pink-text">My All Ordered Lipsticks</h1>
@@ -25,7 +46,7 @@ const MyOrders = () => {
                                 <Card.Text>
                                     <h5 className="pink-text">Price: $ {order?.price}</h5>
                                     <h6 className="pink-text">Status: {order?.status}</h6>
-                                    <button className="btn btn-danger">Cancel</button>
+                                    <button onClick={() => handleRemove(order?._id)} className="btn btn-danger">Cancel</button>
                                 </Card.Text>
                             </Card.Body>
                         </Card>
