@@ -22,6 +22,8 @@ const OrderForm = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         data.status = "Pending"
+        data.price = item?.price;
+        data.img = item?.img;
         fetch("http://localhost:5000/order", {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
