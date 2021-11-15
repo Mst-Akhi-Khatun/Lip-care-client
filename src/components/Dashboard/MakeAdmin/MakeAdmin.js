@@ -2,8 +2,25 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 const MakeAdmin = () => {
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit, reset } = useForm();
+
+    const onSubmit = data => {
+        const email = data.email;
+        fetch(`http://localhost:5000/addAdmin/${email}`, {
+            method: "PUT",
+            headers: { "content-type": "application/json" },
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    alert('Admin successfully added!')
+                    reset()
+                }
+                else {
+                    alert('No Match found! or Already added!')
+                }
+            })
+    };
     return (
         <div className="container mt-4">
             <h1 className="pink-text">Make An Admin Using User Email</h1>

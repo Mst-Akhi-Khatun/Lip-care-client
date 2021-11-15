@@ -24,7 +24,9 @@ const ExploreProducts = () => {
                                         <h5 className="card-title pink-text">{item?.name}</h5>
                                         <p className="card-text w-75 mx-auto text-secondary"> {item?.description}</p>
                                         <h5 className="card-text pink-text">Price: ${item?.price}</h5>
-                                        <button className="pink-btn mt-2">Order Now</button>
+                                        <Link to={`/order/${item?._id}`}>
+                                            <button className="pink-btn mt-2">Order Now</button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>)

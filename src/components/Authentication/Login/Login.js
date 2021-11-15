@@ -4,6 +4,7 @@ import "./Login.css";
 import logo from '../../../images/logo-2.png'
 import useAuth from '../../../hooks/useAuth';
 import { useForm } from 'react-hook-form';
+import Menubar from '../../Header/Menubar/Menubar';
 
 
 const Login = () => {
@@ -16,6 +17,7 @@ const Login = () => {
     };
     return (
         <div className="login-form">
+            <Menubar />
             <div className="container py-1">
                 <div className="text-center">
                     <img src={logo} alt="" className="w-25" />

@@ -4,8 +4,21 @@ import useAuth from '../../../hooks/useAuth';
 
 const GiveReview = () => {
     const { user } = useAuth()
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+        fetch("http://localhost:5000/review", {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('Review Successfully Sent');
+                    reset()
+                }
+            })
+    };
     return (
         <div className="container mt-3">
             <h1 className="pink-text">Give A Review About This Site</h1>
