@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import logo from '../../../images/logo-2.png'
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
-    const { registerUser } = useAuth();
+    const { registerUser, error } = useAuth();
     const history = useHistory();
+    const [errorMsg, setErrorMsg] = useState('')
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         registerUser(data?.email, data?.password, data?.username, history);
+        if (data.password.length < 6) {
+            setErrorMsg(<h6 className="text-white pink-bg py-1">Password must be at least 6 characters!</h6>)
+        }
+        else if (error) {
+            setErrorMsg(<h6 className="text-white pink-bg py-1">Email already used</h6>)
+        }
+        else {
+            setErrorMsg('')
+        }
     };
     return (
         <div className="login-form">
@@ -34,6 +44,7 @@ const Register = () => {
                             <button type="submit" className="pink-btn w-100 mb-2">Register</button>
                         </form>
                         <p>Already have an account? <Link to="/login" className="pink-text">Login</Link></p>
+                        {errorMsg}
                     </div>
                 </div>
             </div>

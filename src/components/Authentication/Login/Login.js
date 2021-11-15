@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import "./Login.css";
 import logo from '../../../images/logo-2.png'
@@ -8,10 +8,11 @@ import Menubar from '../../Header/Menubar/Menubar';
 
 
 const Login = () => {
-    const { loginUser } = useAuth()
+    const { loginUser, error } = useAuth()
     const history = useHistory();
     const location = useLocation();
     const { register, handleSubmit } = useForm();
+
     const onSubmit = data => {
         loginUser(data?.email, data?.password, location, history);
     };
@@ -27,15 +28,14 @@ const Login = () => {
                         <h3>Welcome Back!</h3>
                         <p>Login to your account using your preferred social network authentication</p>
                         {/* login form */}
-
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <input type="email" className="form-control" {...register("email", { required: true })} placeholder="Enter Your Email" />
 
                             <input type="password" className="form-control my-3" {...register("password", { required: true })} placeholder="Enter Your Password" />
-
                             <button type="submit" className="pink-btn w-100 mb-2">Log In</button>
                         </form>
                         <p>Don’t have an account? <Link to="/register" className="pink-text">Create Account</Link></p>
+                        {error ? <p className="pink-bg text-white py-1" >Incorrect email or password!</p> : <p></p>}
                     </div>
                 </div>
             </div>

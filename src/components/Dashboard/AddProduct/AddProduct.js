@@ -2,8 +2,21 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 const AddProduct = () => {
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+        fetch("http://localhost:5000/addItem", {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('New Item successfully added');
+                    reset()
+                }
+            })
+    };
     return (
         <div className="container mt-4">
             <h1 className="pink-text">Add A New Product</h1>
@@ -31,7 +44,7 @@ const AddProduct = () => {
                         />
                         <input
                             type="url"
-                            {...register("description", { required: true })}
+                            {...register("img", { required: true })}
                             className="form-control my-3 "
                             placeholder="Image url link"
                         />

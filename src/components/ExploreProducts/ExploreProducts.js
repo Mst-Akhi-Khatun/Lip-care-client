@@ -9,7 +9,7 @@ const ExploreProducts = () => {
     const [items, setItems] = useProduct();
 
     return (
-        <div className="mb-5">
+        <div className="mb-5" style={{ minHeight: "600px" }}>
             <Menubar />
             <h1 className="text-uppercase mt-3"><span className="pink-text">Lipsticks</span> We Provide</h1>
             <div className="container-fluid px-4">
