@@ -8,7 +8,7 @@ const MyOrders = () => {
     const { user } = useAuth()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${user?.email}`)
+        fetch(`https://lip-care-server.herokuapp.com/myOrders/${user?.email}`)
             .then(res => res.json())
             .then(data => setMyOrders(data))
     }, [remove])
@@ -17,7 +17,7 @@ const MyOrders = () => {
     const handleRemove = (id) => {
         const proceed = window.confirm("Are you sure to remove order?");
         if (proceed) {
-            fetch(`http://localhost:5000/removeOrder/${id}`, {
+            fetch(`https://lip-care-server.herokuapp.com/removeOrder/${id}`, {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' }
             })

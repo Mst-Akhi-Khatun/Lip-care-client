@@ -11,7 +11,7 @@ const OrderForm = () => {
     const [item, setItem] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://lip-care-server.herokuapp.com/product/${id}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data)
@@ -24,7 +24,7 @@ const OrderForm = () => {
         data.status = "Pending"
         data.price = item?.price;
         data.img = item?.img;
-        fetch("http://localhost:5000/order", {
+        fetch("https://lip-care-server.herokuapp.com/order", {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)

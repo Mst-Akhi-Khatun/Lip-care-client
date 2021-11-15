@@ -8,7 +8,7 @@ const ManageOrders = () => {
     const [update, setUpdate] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allOrders')
+        fetch('https://lip-care-server.herokuapp.com/allOrders')
             .then(res => res.json())
             .then(data => setAllOrders(data))
     }, [remove, update])
@@ -16,7 +16,7 @@ const ManageOrders = () => {
     const handleRemove = (id) => {
         const proceed = window.confirm("Are you sure to remove order?");
         if (proceed) {
-            fetch(`http://localhost:5000/removeOrder/${id}`, {
+            fetch(`https://lip-care-server.herokuapp.com/removeOrder/${id}`, {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' }
             })
@@ -32,12 +32,12 @@ const ManageOrders = () => {
 
     // update status
     const handleShipped = (id) => {
-        fetch(`http://localhost:5000/allOrders/${id}`)
+        fetch(`https://lip-care-server.herokuapp.com/allOrders/${id}`)
             .then((res) => res.json())
             .then((data) => setOrder(data));
         setOrder(order.status = "Shipped");
 
-        fetch(`http://localhost:5000/allOrders/${id}`, {
+        fetch(`https://lip-care-server.herokuapp.com/allOrders/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(order),
