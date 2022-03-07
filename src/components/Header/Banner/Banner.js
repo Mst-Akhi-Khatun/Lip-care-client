@@ -16,7 +16,7 @@ const Banner = () => {
                     </Link>
                 </div>
                 <div className="col-md-5">
-                    <div className="pink-bg py-3 px-0 rounded-circle mt-5">
+                    <div className="pb-5 border border-danger rounded-3 pe-5">
                         <img src={banner} alt="" className="img-fluid" />
                     </div>
                 </div>

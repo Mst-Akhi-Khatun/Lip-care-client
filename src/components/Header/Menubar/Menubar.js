@@ -9,7 +9,7 @@ const Menubar = () => {
     const { user, logout } = useAuth();
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" className="light-pink-bg px-5">
+            <Navbar collapseOnSelect expand="lg" className="px-5">
                 <Navbar.Brand href="/">
                     <img
                         src={logo}
