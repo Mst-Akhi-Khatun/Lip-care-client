@@ -14,17 +14,6 @@ const AboutUs = () => {
                         <p>Contains the goodness of Aloe Vera.</p>
                         <p>Contains the goodness of Aloe Vera.</p>
                         <p>Contains the goodness of Aloe Vera.</p>
-                        {/* <ul>
-                            <li>
-                                Contains the goodness of Aloe Vera,
-                            </li>
-                            <li>
-                                Important Protect Your Sunglasses
-                            </li>
-                            <li>
-                                Cataracts One Leading Blindness.
-                            </li>
-                        </ul> */}
                         <Link to="/exploreProducts">
                             <button className="pink-btn">Explore Lipsticks</button>
                         </Link>
